@@ -21,7 +21,6 @@ logilab-common==1.4.1
 lxml==4.5.0
 mccabe==0.6.1
 pycrypto==2.6.1
-pygobject==3.26.1
 pylint==1.8.3
 pyxdg==0.25
 requests==2.24.0
