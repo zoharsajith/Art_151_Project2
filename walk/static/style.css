@@ -1,0 +1,25 @@
+.body{
+    background-image: url('flowers.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.p{
+    color:antiquewhite
+}
+
+div.transbox {
+    margin: 3px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+}
+
+div.transbox p {
+    margin: 1%;
+    font-weight: bold;
+    color: black;
+    font-size: 40px;
+    text-align: center;
+}
