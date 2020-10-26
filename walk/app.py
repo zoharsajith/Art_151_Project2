@@ -6,6 +6,7 @@ app = Flask(__name__)
 from bs4 import BeautifulSoup
 import requests
 import re
+import time
 
 @app.route("/")
 
