@@ -16,7 +16,7 @@ div.transbox {
     opacity: 0.6;
 }
 
-div.transbox p {
+div.transbox h3 {
     margin: 1%;
     font-weight: bold;
     color: black;
