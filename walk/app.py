@@ -12,7 +12,6 @@ import time
 
 def index():
     #set up list
-    gallery = "gallery&400"
     nerves = "nerves"
     skeleton = "skeleton"
     muscles = "muscles"
@@ -27,7 +26,7 @@ def index():
             search = nerves
             article = []
             results = 100 # valid options 10, 20, 30, 40, 50, and 100
-            page = requests.get(f"https://www.google.com/search?q={search}&num={results}&pws=0",headers = headers)
+            page = requests.get(f"https://www.bing.com/search?q={search}&num={results}&pws=0",headers = headers)
             soup = BeautifulSoup(page.content, "html.parser")
             links = soup.findAll("a")
             for link in links :
@@ -43,7 +42,6 @@ def index():
         return render_template("index.html", text = text)
         time.sleep(0.1)
         i = i + 1
-    return render_template("index.html", text = text)
 
 @app.route('/nerves')
 
