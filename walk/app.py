@@ -79,6 +79,6 @@ def muscle():
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
     text = soup.text[1000:1500]
-    return render_template("muscle.html", text = text)
+    return render_template("muscles.html", text = text)
 
 
