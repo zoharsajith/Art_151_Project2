@@ -12,7 +12,7 @@ import time
 
 def index():
     #set up list
-    body = "body"
+    body = "human body"
     nerves = "nerves"
     skeleton = "skeleton"
     muscles = "muscles"
@@ -23,14 +23,14 @@ def index():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[1000:1500]
+    text = soup.text[0:1500]
 
     return render_template("index.html", text = text)
 
 @app.route('/nerves')
 
 def nerves():
-    body = "body"
+    body = "human body"
     nerves = "nerves"
     skeleton = "skeleton"
     muscles = "muscles"
@@ -41,7 +41,7 @@ def nerves():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[980:1500]
+    text = soup.text[0:1500]
 
     return render_template("nerves.html", text = text)
 
@@ -49,7 +49,7 @@ def nerves():
 
 def skeleton():
 
-    body = "body"
+    body = "human body"
     nerves = "nerves"
     skeleton = "skeleton"
     muscles = "muscles"
@@ -60,7 +60,7 @@ def skeleton():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[1000:1500]
+    text = soup.text[0:1200]
     return render_template("skeleton.html", text = text)
 
 @app.route('/muscles')
@@ -78,7 +78,7 @@ def muscle():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}", headers = headers)
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.find('div', id="bodyContent").p
+    text = soup.text[0:2000]
     return render_template("muscles.html", text = text)
 
 
