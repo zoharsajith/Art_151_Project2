@@ -63,11 +63,11 @@ def skeleton():
     text = soup.text[1000:1500]
     return render_template("skeleton.html", text = text)
 
-@app.route('/muscle')
+@app.route('/muscles')
 
 def muscle():
 
-    body = "body"
+    body = "human body"
     nerves = "nerves"
     skeleton = "skeleton"
     muscles = "muscles"
