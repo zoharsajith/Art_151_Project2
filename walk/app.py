@@ -12,35 +12,73 @@ import time
 
 def index():
     #set up list
+    body = "body"
     nerves = "nerves"
     skeleton = "skeleton"
     muscles = "muscles"
 
     headers = {'User-Agent': 'Mozilla/5.0'}
 
-    results = 1
+    search  = body
+
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
     text = soup.text[1000:1500]
-
-
-
 
     return render_template("index.html", text = text)
 
 @app.route('/nerves')
 
-def BONE():
-    return render_template("nerves.html")
+def nerves():
+    body = "body"
+    nerves = "nerves"
+    skeleton = "skeleton"
+    muscles = "muscles"
+
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
+    search  = nerves
+
+    page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
+    soup = BeautifulSoup(page.content, "html.parser")
+    text = soup.text[1000:1500]
+
+    return render_template("nerves.html", text = text)
 
 @app.route('/skeleton')
 
-def NERVES():
-    return render_template("skeleton.html")
+def skeleton():
+
+    body = "body"
+    nerves = "nerves"
+    skeleton = "skeleton"
+    muscles = "muscles"
+
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
+    search  = skeleton
+
+    page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
+    soup = BeautifulSoup(page.content, "html.parser")
+    text = soup.text[1000:1500]
+    return render_template("skeleton.html", text = text)
 
 @app.route('/muscle')
 
-def MUSCLES():
-    return render_template("muscle.html")
+def muscle():
+
+    body = "body"
+    nerves = "nerves"
+    skeleton = "skeleton"
+    muscles = "muscles"
+
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
+    search  = muscles
+
+    page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
+    soup = BeautifulSoup(page.content, "html.parser")
+    text = soup.text[1000:1500]
+    return render_template("muscle.html", text = text)
 
 
