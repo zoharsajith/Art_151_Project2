@@ -41,7 +41,7 @@ def nerves():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[1000:1500]
+    text = soup.text[980:1500]
 
     return render_template("nerves.html", text = text)
 
@@ -76,9 +76,9 @@ def muscle():
 
     search  = muscles
 
-    page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
+    page = requests.get(f"https://en.wikipedia.org/wiki/{search}", headers = headers)
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[1000:1500]
+    text = soup.find('div', id="bodyContent").p
     return render_template("muscles.html", text = text)
 
 
