@@ -23,7 +23,7 @@ def index():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[0:1500]
+    text = soup.text[300:1500]
 
     return render_template("index.html", text = text)
 
@@ -41,7 +41,7 @@ def nerves():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[0:1500]
+    text = soup.text[300:1500]
 
     return render_template("nerves.html", text = text)
 
@@ -60,7 +60,7 @@ def skeleton():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[0:1200]
+    text = soup.text[300:1200]
     return render_template("skeleton.html", text = text)
 
 @app.route('/muscles')
@@ -78,7 +78,7 @@ def muscle():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}", headers = headers)
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[0:2000]
+    text = soup.text[300:2000]
     return render_template("muscles.html", text = text)
 
 
