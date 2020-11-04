@@ -23,7 +23,7 @@ def index():
 
     page = requests.get(f"https://en.wikipedia.org/wiki/{search}")
     soup = BeautifulSoup(page.content, "html.parser")
-    text = soup.text[300:1500]
+    text = soup.text[303:1500]
 
     return render_template("index.html", text = text)
 
